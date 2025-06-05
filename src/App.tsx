@@ -14,7 +14,7 @@ function App() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  const { jobStatus, startPolling, error: pollingError } = useJobPolling(jobId)
+  const { jobStatus, error: pollingError } = useJobPolling(jobId)
 
   const handleEmailSubmit = async (email: string) => {
     setIsSubmitting(true)
