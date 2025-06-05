@@ -59,11 +59,6 @@ function App() {
               <p className="text-gray-600 dark:text-gray-400 mb-6">
                 We encountered an issue while analyzing your UberEats data. This could be due to account access issues or unexpected data formats.
               </p>
-              {jobStatus.message && (
-                <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 mb-6">
-                  <p className="text-sm text-gray-700 dark:text-gray-300">{jobStatus.message}</p>
-                </div>
-              )}
             </div>
             <button
               onClick={() => {
@@ -129,7 +124,7 @@ function App() {
     if (jobId && (!jobStatus || jobStatus.status === 'starting')) {
       return (
         <div className="flex flex-col items-center justify-center min-h-screen">
-          <LoadingSpinner message="Preparing secure login session..." />
+          <LoadingSpinner message="Preparing secure login session (this may take a minute)..." />
         </div>
       )
     }
