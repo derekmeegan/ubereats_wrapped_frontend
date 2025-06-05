@@ -45,6 +45,41 @@ function App() {
   }
 
   const renderContent = () => {
+    // Show job failed state
+    if (jobStatus?.status === 'failed') {
+      return (
+        <div className="flex flex-col items-center justify-center min-h-screen">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 text-center max-w-md mx-auto">
+            <div className="mb-6">
+              <div className="w-16 h-16 bg-red-100 dark:bg-red-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-3xl">😞</span>
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                Oops! Something went wrong
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
+                We encountered an issue while analyzing your UberEats data. This could be due to account access issues or unexpected data formats.
+              </p>
+              {jobStatus.message && (
+                <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 mb-6">
+                  <p className="text-sm text-gray-700 dark:text-gray-300">{jobStatus.message}</p>
+                </div>
+              )}
+            </div>
+            <button
+              onClick={() => {
+                setJobId(null)
+                setError(null)
+              }}
+              className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all"
+            >
+              Try Again
+            </button>
+          </div>
+        </div>
+      )
+    }
+
     // Show error state
     if (error || pollingError) {
       return (
