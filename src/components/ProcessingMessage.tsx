@@ -34,7 +34,7 @@ export const ProcessingMessage = () => {
             <li>• Favorite restaurants and cuisines</li>
             <li>• Spending habits over time</li>
             <li>• Peak ordering times</li>
-            <li>• Geographic delivery locations</li>
+            <li>• What you could have bought instead</li>
           </ul>
         </div>
       </div>
