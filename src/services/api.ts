@@ -22,8 +22,6 @@ export const api = {
       throw new Error(`Failed to start job: ${response.statusText}`);
     }
 
-    // For async lambda invocation, response body is empty
-    // Use email as the job ID
     return { jobId: userEmail, status: 'starting' };
   },
 
@@ -37,6 +35,8 @@ export const api = {
     if (!response.ok) {
       throw new Error(`Failed to get job status: ${response.statusText}`);
     }
+
+    console.log('Job status response:', response);
 
     return response.json();
   },

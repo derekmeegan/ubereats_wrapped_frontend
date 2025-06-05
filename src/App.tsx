@@ -23,7 +23,7 @@ function App() {
     try {
       const response = await api.startJob(email)
       setJobId(response.jobId)
-      startPolling()
+      // Don't call startPolling() here - let useEffect handle it when jobId changes
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to start analysis')
     } finally {

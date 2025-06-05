@@ -13,6 +13,7 @@ export const useJobPolling = (jobId: string | null, pollingInterval: number = 30
     try {
       setError(null);
       const status = await api.getJobStatus(jobId);
+      console.log('Job status:', status);
       setJobStatus(status);
       
       // Stop polling when job is completed, failed, or user is logged in and processing
@@ -25,8 +26,22 @@ export const useJobPolling = (jobId: string | null, pollingInterval: number = 30
     }
   }, [jobId]);
 
+  // Auto-start polling when jobId is set
+  useEffect(() => {
+    if (jobId) {
+      console.log('Starting polling for new jobId:', jobId);
+      setIsPolling(true);
+    } else {
+      setIsPolling(false);
+      setJobStatus(null);
+      setError(null);
+    }
+  }, [jobId]);
+
   useEffect(() => {
     if (!jobId || !isPolling) return;
+
+    console.log('Polling status for job:', jobId);
 
     // Poll immediately
     pollStatus();
