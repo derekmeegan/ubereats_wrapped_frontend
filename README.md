@@ -126,7 +126,7 @@ Polls job status
 Returns:
 ```json
 {
-  "status": "starting" | "awaiting_login" | "extracting" | "completed" | "failed",
+  "status": "starting" | "awaiting_login" | "extracting" | "completed" | "error",
   "liveViewUrl": "https://...", // Only when status is "needs_login"
   "message": "Optional status message"
 }

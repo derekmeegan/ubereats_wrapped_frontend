@@ -16,8 +16,8 @@ export const useJobPolling = (jobId: string | null, pollingInterval: number = 30
       console.log('Job status:', status);
       setJobStatus(status);
       
-      // Stop polling when job is completed, failed, or user is logged in and processing
-      if (status.status === 'completed' || status.status === 'failed' || status.status === 'extracting') {
+      // Stop polling when job is completed, error, or user is logged in and extracting
+      if (status.status === 'completed' || status.status === 'error' || status.status === 'extracting') {
         setIsPolling(false);
       }
     } catch (err) {

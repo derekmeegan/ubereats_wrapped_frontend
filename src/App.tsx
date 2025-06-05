@@ -45,8 +45,7 @@ function App() {
   }
 
   const renderContent = () => {
-    // Show job failed state
-    if (jobStatus?.status === 'failed') {
+    if (jobStatus?.status === 'error') {
       return (
         <div className="flex flex-col items-center justify-center min-h-screen">
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 text-center max-w-md mx-auto">

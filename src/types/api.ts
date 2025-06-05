@@ -1,5 +1,5 @@
 export interface JobStatus {
-  status: 'starting' | 'awaiting_login' | 'logged_in' | 'extracting' | 'completed' | 'failed';
+  status: 'starting' | 'awaiting_login' | 'logged_in' | 'extracting' | 'completed' | 'error';
   liveViewUrl?: string;
   message?: string;
 }
