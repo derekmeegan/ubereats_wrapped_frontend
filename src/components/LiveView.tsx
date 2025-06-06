@@ -31,15 +31,13 @@ export const LiveView = ({ liveViewUrl }: LiveViewProps) => {
         </div>
       </div>
       
-      <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
         <iframe
           src={liveViewUrl}
           sandbox="allow-same-origin allow-scripts"
           allow="clipboard-read; clipboard-write"
-          className="w-full h-96 border-0"
+          className="w-full h-[600px] border-0"
           title="UberEats Login"
         />
-      </div>
     </div>
   );
 }; 
