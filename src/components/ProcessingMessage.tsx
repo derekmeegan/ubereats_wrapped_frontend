@@ -19,11 +19,13 @@ export const ProcessingMessage = () => {
         
         <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
           <div className="flex items-center justify-center gap-3 mb-3">
-            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
-            <span className="text-blue-800 dark:text-blue-200 font-medium">Processing your data...</span>
+            <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span className="text-blue-800 dark:text-blue-200 font-medium">Processing complete!</span>
           </div>
           <p className="text-blue-700 dark:text-blue-300 text-sm">
-            This may take a few minutes. We'll email you the results when complete.
+            Check your email in about 10 minutes for your personalized UberEats Wrapped report.
           </p>
         </div>
         
