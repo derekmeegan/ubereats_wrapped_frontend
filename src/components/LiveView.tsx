@@ -4,7 +4,7 @@ interface LiveViewProps {
 
 export const LiveView = ({ liveViewUrl }: LiveViewProps) => {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 w-[750px]">
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
           Login to Your UberEats Account
@@ -31,13 +31,13 @@ export const LiveView = ({ liveViewUrl }: LiveViewProps) => {
         </div>
       </div>
       
-        <iframe
-          src={liveViewUrl}
-          sandbox="allow-same-origin allow-scripts"
-          allow="clipboard-read; clipboard-write"
-          className="w-full border-0"
-          title="UberEats Login"
-        />
+      <iframe
+        src={liveViewUrl}
+        sandbox="allow-same-origin allow-scripts"
+        allow="clipboard-read; clipboard-write"
+        className="w-full h-[500px] border-0"
+        title="UberEats Login"
+      />
     </div>
   );
 }; 
