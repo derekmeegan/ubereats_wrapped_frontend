@@ -30,7 +30,10 @@ export const useJobPolling = (jobId: string | null, pollingInterval: number = 30
   useEffect(() => {
     if (jobId) {
       console.log('Starting polling for new jobId:', jobId);
-      setIsPolling(true);
+      // wait 1 second before starting polling
+      setTimeout(() => {
+        setIsPolling(true);
+      }, 1000);
     } else {
       setIsPolling(false);
       setJobStatus(null);
