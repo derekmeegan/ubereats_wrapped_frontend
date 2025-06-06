@@ -35,7 +35,7 @@ export const LiveView = ({ liveViewUrl }: LiveViewProps) => {
           src={liveViewUrl}
           sandbox="allow-same-origin allow-scripts"
           allow="clipboard-read; clipboard-write"
-          className="w-full h-[600px] border-0"
+          className="w-full border-0"
           title="UberEats Login"
         />
     </div>
